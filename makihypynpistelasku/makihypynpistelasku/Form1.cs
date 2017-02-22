@@ -16,5 +16,16 @@ namespace makihypynpistelasku
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            Contender NextContender = new Contender(Convert.ToString(listBox1.SelectedItem), Convert.ToDecimal(r.Next(80, 146)));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(textBox13.Text);
+        }
     }
 }
