@@ -36,12 +36,12 @@ namespace makihypynpistelasku
                 }
             }
             Random r = new Random();
-            Contender NextContender = new Contender(Convert.ToString(listBox1.SelectedItem), Math.Ceiling(Convert.ToDecimal(r.Next(80, 146) + r.NextDouble()) * 10) / 10);
-            listBox2.Items[listBox1.SelectedIndex] = Convert.ToString(NextContender.jumpLenght);
+            Jump NextJump = new Jump(Convert.ToString(listBox1.SelectedItem), Math.Ceiling(Convert.ToDecimal(r.Next(80, 146) + r.NextDouble()) * 10) / 10);
+            Jump NextPoints = new Jump("Points" ,Convert.ToDecimal(textBox1.Text), Convert.ToDecimal(textBox2.Text), Convert.ToDecimal(textBox3.Text), Convert.ToDecimal(textBox4.Text), Convert.ToDecimal(textBox5.Text));
+            Jump NextWind = new Jump("Wind", Convert.ToDecimal(textBox6.Text), Convert.ToDecimal(textBox7.Text), Convert.ToDecimal(textBox8.Text), Convert.ToDecimal(textBox9.Text), Convert.ToDecimal(textBox10.Text));
 
-            Points NextPoints = new Points(Convert.ToDecimal(textBox1.Text), Convert.ToDecimal(textBox2.Text), Convert.ToDecimal(textBox3.Text), Convert.ToDecimal(textBox4.Text), Convert.ToDecimal(textBox5.Text));
-
-            Wind NextWind = new Wind(Convert.ToDecimal(textBox6.Text), Convert.ToDecimal(textBox7.Text), Convert.ToDecimal(textBox8.Text), Convert.ToDecimal(textBox9.Text), Convert.ToDecimal(textBox10.Text));
+            listBox2.Items[listBox1.SelectedIndex] = Convert.ToString(NextJump.jumpLenght);
+            listBox3.Items[listBox1.SelectedIndex] = Convert.ToString(NextPoints.pointsTotal);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -64,6 +64,32 @@ namespace makihypynpistelasku
             textBox8.Enabled = true;
             textBox9.Enabled = true;
             textBox10.Enabled = true;           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            float Half = 0;
+            float[] array = new float[5];
+
+            for(int i = 0; i < 5; i++)
+            {
+                int HalfCheck = r.Next(0, 2);
+                if (HalfCheck == 1)
+                {
+                    Half = 0.5f;
+                }
+                else
+                {
+                    Half = 0f;
+                }
+                array[i] = Half;
+            }
+            textBox1.Text = Convert.ToString(r.Next(1, 21) + array[0]);
+            textBox2.Text = Convert.ToString(r.Next(1, 21) + array[1]);
+            textBox3.Text = Convert.ToString(r.Next(1, 21) + array[2]);
+            textBox4.Text = Convert.ToString(r.Next(1, 21) + array[3]);
+            textBox5.Text = Convert.ToString(r.Next(1, 21) + array[4]);
         }
     }
 }

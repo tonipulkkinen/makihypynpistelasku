@@ -83,7 +83,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "0";
+            this.textBox1.Text = "5";
             // 
             // textBox2
             // 
@@ -92,7 +92,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "0";
+            this.textBox2.Text = "5";
             // 
             // label2
             // 
@@ -110,7 +110,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "0";
+            this.textBox3.Text = "5";
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "0";
+            this.textBox4.Text = "5";
             // 
             // label4
             // 
@@ -146,7 +146,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
-            this.textBox5.Text = "0";
+            this.textBox5.Text = "5";
             // 
             // label5
             // 
@@ -164,7 +164,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 11;
-            this.textBox6.Text = "0";
+            this.textBox6.Text = "5";
             // 
             // label6
             // 
@@ -182,7 +182,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 13;
-            this.textBox7.Text = "0";
+            this.textBox7.Text = "5";
             // 
             // label7
             // 
@@ -200,7 +200,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 15;
-            this.textBox8.Text = "0";
+            this.textBox8.Text = "5";
             // 
             // label8
             // 
@@ -218,7 +218,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 17;
-            this.textBox9.Text = "0";
+            this.textBox9.Text = "5";
             // 
             // label9
             // 
@@ -236,7 +236,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 19;
-            this.textBox10.Text = "0";
+            this.textBox10.Text = "5";
             // 
             // label10
             // 
@@ -351,6 +351,7 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "Random";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label17
             // 
@@ -365,6 +366,12 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Testihyppääjä 1",
+            "Testihyppääjä 2",
+            "Testihyppääjä 3",
+            "Testihyppääjä 4",
+            "Testihyppääjä 5"});
             this.listBox1.Location = new System.Drawing.Point(15, 30);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(159, 277);
