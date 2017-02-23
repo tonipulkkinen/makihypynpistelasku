@@ -9,7 +9,6 @@ namespace makihypynpistelasku
     class Contender
     {
         public string name;
-        public decimal score;
         public decimal jumpLenght;
 
         //Constructors
