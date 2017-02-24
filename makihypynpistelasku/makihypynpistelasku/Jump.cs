@@ -23,8 +23,7 @@ namespace makihypynpistelasku
         public decimal location3;
         public decimal location4;
         public decimal location5;
-        public decimal WindAverage;
-        int WindDirection = 0;
+        public decimal windAverage;
 
         //Constructors
         public Jump(string Name, decimal JumpLenght)
@@ -56,15 +55,7 @@ namespace makihypynpistelasku
                 location4 = Value4;
                 location5 = Value5;
 
-                WindAverage = (location1 + location2 + location3 + location4 + location5) / 5;
-                if (WindAverage < 0)
-                {
-                    WindDirection = -1;
-                }
-                if (WindAverage > 0)
-                {
-                    WindDirection = 1;
-                }
+                windAverage = (location1 + location2 + location3 + location4 + location5) / 5;
             }            
         }
     }
