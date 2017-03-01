@@ -8,32 +8,32 @@ namespace makihypynpistelasku
 {
     public class Jump
     {
-        public string contenderName;
-        public decimal jumpLenght;
-        public int criticalPoint;
+        public string _contenderName;
+        public decimal _jumpLenght;
+        public int _criticalPoint;
 
         private decimal _points1;
         private decimal _points2;
         private decimal _points3;
         private decimal _points4;
         private decimal _points5;
-        public decimal pointsTotal;
+        public decimal _pointsTotal;
 
         private decimal _location1;
         private decimal _location2;
         private decimal _location3;
         private decimal _location4;
         private decimal _location5;
-        public decimal windAverage;
+        public decimal _windAverage;
 
         //Constructors
         public Jump(string Name, decimal JumpLenght, int CriticalPoint,
             decimal Value1, decimal Value2, decimal Value3, decimal Value4, decimal Value5,
             decimal Value6, decimal Value7, decimal Value8, decimal Value9, decimal Value10)
         {
-            contenderName = Name;
-            jumpLenght = JumpLenght;
-            criticalPoint = CriticalPoint;
+            _contenderName = Name;
+            _jumpLenght = JumpLenght;
+            _criticalPoint = CriticalPoint;
             _points1 = Value1;
             _points2 = Value2;
             _points3 = Value3;
@@ -48,9 +48,9 @@ namespace makihypynpistelasku
             decimal[] scores = new[] { _points1, _points2, _points3, _points4, _points5 };
             decimal min = scores.Min();
             decimal max = scores.Max();
-            pointsTotal = (((_points1 + _points2 + _points3 + _points4 + _points5) - min) - max);
+            _pointsTotal = (((_points1 + _points2 + _points3 + _points4 + _points5) - min) - max);
 
-            windAverage = (_location1 + _location2 + _location3 + _location4 + _location5) / 5;
+            _windAverage = (_location1 + _location2 + _location3 + _location4 + _location5) / 5;
         }
 
         //Properties
@@ -58,13 +58,47 @@ namespace makihypynpistelasku
         //Methods
         public void CriticalPointCheck()
         {
-            if (jumpLenght >= criticalPoint)
+            if (_jumpLenght >= _criticalPoint)
             {
-                pointsTotal += 60 + (jumpLenght - criticalPoint) * 1.8m;
+                _pointsTotal += 60 + (_jumpLenght - _criticalPoint) * 1.8m;
             }
             else
             {
-                pointsTotal -= (criticalPoint - jumpLenght) * 1.8m;
+                _pointsTotal -= (_criticalPoint - _jumpLenght) * 1.8m;
+            }
+        }
+        public void WindEffectCheck()
+        {
+            decimal WindEffect = _windAverage * (_criticalPoint - 36) / 20;
+            if (WindEffect > 0)
+            {
+                if (WindEffect * 10 - Math.Floor(WindEffect * 10) >= 0.75m)
+                {
+                    _pointsTotal += (Math.Ceiling(WindEffect * 10) / 10) * 1.8m;
+                }
+                if (WindEffect * 10 - Math.Floor(WindEffect * 10) >= 0.25m && WindEffect / 10 - Math.Floor(WindEffect / 10) < 0.75m)
+                {
+                    _pointsTotal += (Math.Ceiling(WindEffect * 10 - 0.5m) / 10) * 1.8m;
+                }
+                if (WindEffect * 10 - Math.Floor(WindEffect * 10) < 0.25m)
+                {
+                    _pointsTotal += (Math.Floor(WindEffect * 10) / 10) * 1.8m;
+                }
+            }
+            if (WindEffect < 0)
+            {
+                if (WindEffect / 10 - Math.Floor(WindEffect / 10) <= 0.75m)
+                {
+                    _pointsTotal += (Math.Ceiling(WindEffect * 10) / 10) * 1.8m;
+                }
+                if (WindEffect / 10 - Math.Floor(WindEffect / 10) <= 0.25m && WindEffect / 10 - Math.Floor(WindEffect / 10) > 0.75m)
+                {
+                    _pointsTotal += (Math.Ceiling(WindEffect * 10 - 0.5m) / 10) * 1.8m;
+                }
+                if (WindEffect / 10 - Math.Floor(WindEffect / 10) > 0.25m)
+                {
+                    _pointsTotal += (Math.Floor(WindEffect * 10) / 10) * 1.8m;
+                }
             }
         }
     }
