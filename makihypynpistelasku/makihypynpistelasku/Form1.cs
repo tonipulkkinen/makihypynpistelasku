@@ -12,6 +12,8 @@ namespace makihypynpistelasku
 {
     public partial class Form1 : Form
     {
+        public List<Jump> Results = new List<Jump>();
+        //List<Jump> Results = new List<Jump>();
         public Form1()
         {
             InitializeComponent();
@@ -19,48 +21,33 @@ namespace makihypynpistelasku
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListItemAdd(listBox1, listBox2, listBox3);
             Random r = new Random();
-            Jump NextJump = new Jump(Convert.ToString(listBox1.SelectedItem), Math.Ceiling(Convert.ToDecimal(r.Next(100, 135) + r.NextDouble()) * 10) / 10, Convert.ToInt32(textBox11.Text),
+            
+            Jump NextJump = new Jump(Convert.ToString(textBox13.Text), Math.Ceiling(Convert.ToDecimal(r.Next(100, 135) + r.NextDouble()) * 10) / 10, Convert.ToInt32(textBox11.Text), Convert.ToDecimal(textBox12.Text),
                 Convert.ToDecimal(textBox1.Text), Convert.ToDecimal(textBox2.Text), Convert.ToDecimal(textBox3.Text), Convert.ToDecimal(textBox4.Text), Convert.ToDecimal(textBox5.Text),
                 Convert.ToDecimal(textBox6.Text), Convert.ToDecimal(textBox7.Text), Convert.ToDecimal(textBox8.Text), Convert.ToDecimal(textBox9.Text), Convert.ToDecimal(textBox10.Text));
 
-            decimal PlatformChange = Convert.ToDecimal(textBox12.Text) * -1;
-
             NextJump.CriticalPointCheck();
             NextJump.WindEffectCheck();
+            NextJump.PlatformChangeCheck();
 
-            
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
 
-
-            NextJump._pointsTotal += (PlatformChange * 5) * 1.8m;
-
-            listBox2.Items[listBox1.SelectedIndex] = Convert.ToString(NextJump._jumpLenght);
-            listBox3.Items[listBox1.SelectedIndex] = Convert.ToString(NextJump._pointsTotal);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Add(textBox13.Text);
-            textBox13.Text = "";
+            Results.Add(NextJump);
+            var results = Results.OrderByDescending(jump => jump.PointsTotal);
+            foreach (Jump jump in results)
+            {
+                listBox1.Items.Add(jump.Name);
+                listBox2.Items.Add(jump.JumpLenght);
+                listBox3.Items.Add(jump.PointsTotal);
+            }
+            textBox13.Clear();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            button2.Enabled = true;
-            textBox1.Enabled = true;
-            textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            textBox4.Enabled = true;
-            textBox5.Enabled = true;
-            textBox6.Enabled = true;
-            textBox7.Enabled = true;
-            textBox8.Enabled = true;
-            textBox9.Enabled = true;
-            textBox10.Enabled = true;
-
-            textBox12.Text = "0";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -107,30 +94,15 @@ namespace makihypynpistelasku
             {
                 textBox5.Text = "20";
             }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
             textBox6.Text = Convert.ToString(Math.Ceiling((r.Next(-5, 5) + r.NextDouble()) * 10) / 10);
             textBox7.Text = Convert.ToString(Math.Ceiling((r.Next(-5, 5) + r.NextDouble()) * 10) / 10);
             textBox8.Text = Convert.ToString(Math.Ceiling((r.Next(-5, 5) + r.NextDouble()) * 10) / 10);
             textBox9.Text = Convert.ToString(Math.Ceiling((r.Next(-5, 5) + r.NextDouble()) * 10) / 10);
             textBox10.Text = Convert.ToString(Math.Ceiling((r.Next(-5, 5) + r.NextDouble()) * 10) / 10);
-        }
-        static void ListItemAdd(ListBox listbox1, ListBox listbox2, ListBox listbox3)
-        {
-            if (listbox2.Items.Count < listbox1.Items.Count)
-            {
-                int i;
-                for (i = listbox1.Items.Count - listbox2.Items.Count; i > 0; i--)
-                {
-                    listbox2.Items.Add("");
-                }
-            }
-            if (listbox3.Items.Count < listbox1.Items.Count)
-            {
-                int i;
-                for (i = listbox1.Items.Count - listbox3.Items.Count; i > 0; i--)
-                {
-                    listbox3.Items.Add("");
-                }
-            }
         }
     }
 }

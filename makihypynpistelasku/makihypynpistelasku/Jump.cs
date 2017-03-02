@@ -8,32 +8,34 @@ namespace makihypynpistelasku
 {
     public class Jump
     {
-        public string _contenderName;
-        public decimal _jumpLenght;
-        public int _criticalPoint;
+        private string _contenderName;
+        private decimal _jumpLenght;
+        private int _criticalPoint;
+        private decimal _platformChange;
 
         private decimal _points1;
         private decimal _points2;
         private decimal _points3;
         private decimal _points4;
         private decimal _points5;
-        public decimal _pointsTotal;
+        private decimal _pointsTotal;
 
         private decimal _location1;
         private decimal _location2;
         private decimal _location3;
         private decimal _location4;
         private decimal _location5;
-        public decimal _windAverage;
+        private decimal _windAverage;
 
         //Constructors
-        public Jump(string Name, decimal JumpLenght, int CriticalPoint,
+        public Jump(string Name, decimal JumpLenght, int CriticalPoint, decimal PlatformChange,
             decimal Value1, decimal Value2, decimal Value3, decimal Value4, decimal Value5,
             decimal Value6, decimal Value7, decimal Value8, decimal Value9, decimal Value10)
         {
             _contenderName = Name;
             _jumpLenght = JumpLenght;
             _criticalPoint = CriticalPoint;
+            _platformChange = PlatformChange * -1;
             _points1 = Value1;
             _points2 = Value2;
             _points3 = Value3;
@@ -52,8 +54,22 @@ namespace makihypynpistelasku
 
             _windAverage = (_location1 + _location2 + _location3 + _location4 + _location5) / 5;
         }
-
         //Properties
+        public decimal JumpLenght
+        {
+            get { return _jumpLenght; }
+            set { _jumpLenght = value; }
+        }
+        public decimal PointsTotal
+        {
+            get { return _pointsTotal; }
+            set { _pointsTotal = value; }
+        }
+        public string Name
+        {
+            get { return _contenderName; }
+            set { _contenderName = value; }
+        }
 
         //Methods
         public void CriticalPointCheck()
@@ -100,6 +116,10 @@ namespace makihypynpistelasku
                     _pointsTotal += (Math.Floor(WindEffect * 10) / 10) * 1.8m;
                 }
             }
+        }
+        public void PlatformChangeCheck()
+        {
+            _pointsTotal += (_platformChange * 5) * 1.8m;
         }
     }
 }

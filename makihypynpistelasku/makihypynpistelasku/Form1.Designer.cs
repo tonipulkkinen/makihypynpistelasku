@@ -62,9 +62,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +78,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(326, 109);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -87,7 +86,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(326, 154);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -105,7 +103,6 @@
             // 
             // textBox3
             // 
-            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(326, 199);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -123,7 +120,6 @@
             // 
             // textBox4
             // 
-            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(326, 244);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
@@ -141,7 +137,6 @@
             // 
             // textBox5
             // 
-            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(326, 289);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
@@ -159,7 +154,6 @@
             // 
             // textBox6
             // 
-            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(441, 109);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -177,7 +171,6 @@
             // 
             // textBox7
             // 
-            this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(441, 154);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -195,7 +188,6 @@
             // 
             // textBox8
             // 
-            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(441, 199);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
@@ -213,7 +205,6 @@
             // 
             // textBox9
             // 
-            this.textBox9.Enabled = false;
             this.textBox9.Location = new System.Drawing.Point(441, 244);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -231,7 +222,6 @@
             // 
             // textBox10
             // 
-            this.textBox10.Enabled = false;
             this.textBox10.Location = new System.Drawing.Point(441, 289);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
@@ -305,7 +295,7 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(12, 339);
+            this.textBox13.Location = new System.Drawing.Point(12, 335);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(162, 20);
@@ -333,8 +323,7 @@
             // 
             // button1
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(484, 336);
+            this.button1.Location = new System.Drawing.Point(180, 332);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
@@ -344,8 +333,7 @@
             // 
             // button2
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(403, 336);
+            this.button2.Location = new System.Drawing.Point(338, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 31;
@@ -365,13 +353,8 @@
             // 
             // listBox1
             // 
+            this.listBox1.Enabled = false;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Testihyppääjä 1",
-            "Testihyppääjä 2",
-            "Testihyppääjä 3",
-            "Testihyppääjä 4",
-            "Testihyppääjä 5"});
             this.listBox1.Location = new System.Drawing.Point(15, 30);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(159, 277);
@@ -382,21 +365,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 323);
+            this.label18.Location = new System.Drawing.Point(12, 319);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(92, 13);
+            this.label18.Size = new System.Drawing.Size(116, 13);
             this.label18.TabIndex = 35;
-            this.label18.Text = "Lisää hyppääjä";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(180, 337);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Lisää";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label18.Text = "Seuraava hyppääjä";
             // 
             // listBox2
             // 
@@ -416,14 +389,24 @@
             this.listBox3.Size = new System.Drawing.Size(51, 277);
             this.listBox3.TabIndex = 38;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(452, 315);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "Random";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 371);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label17);
@@ -501,9 +484,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Button button3;
     }
 }
 
